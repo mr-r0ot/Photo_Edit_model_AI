@@ -49,5 +49,20 @@ python3 ModelAI.py INPUT_PHOTO_PATH OUTPUT_PHOTO_PATH --show --Modern_quality --
 ```
 
 
+# ORRRRRR
+```
+python3 ModelAI.py INPUT_PHOTO_PATH OUTPUT_PHOTO_PATH YOUR_ASK  
+```
+
+# Example: photo aging (blur)
+```
+python3 ModelAI.py INPUT_PHOTO_PATH OUTPUT_PHOTO_PATH Make the image old and then remove the noise and display it.
+```
+
+# Example: Increase photo quality
+```
+python3 ModelAI.py INPUT_PHOTO_PATH OUTPUT_PHOTO_PATH Increase the quality of the photo! And then show it!
+```
+
 # and moree..
 Coded By Nicola (Telegram: @black_nicola)
