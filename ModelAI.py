@@ -22,7 +22,7 @@ except:
 argv=''
 for a in sys.argv:
 	argv=(f'{argv} {a}')
-
+argv=argv.lower()
 try:
 	image = photoAI.open_photo(input_photo)
 except:
@@ -37,38 +37,38 @@ if '--size(' in argv:
 	size2=(size2.split(')')[0])
 	image = photoAI.photo.Setting_size(image,size1,size2)
 
-if '--quality' in argv:
+if '--quality' in argv or 'quality' in argv:
     image = photoAI.photo.Setting_quality(image,quality=1000)
-if '--Adjust_brightness_and_contrast(contrast=10,brightness=2)' in argv:
+if '--Adjust_brightness_and_contrast(contrast=10,brightness=2)' in argv or 'contrast' in argv or 'brightness' in argv:
 	con=argv.split('contrast=')[1]
 	con=con.split(',')[0]
 	bri=argv.split('brightness=')[1]
 	bri=bri.split(')')[0]
 	image = photoAI.photo.Adjust_brightness_and_contrast(image,contrast=int(con),brightness=int(bri))
-if '--enhance' in argv:
+if '--enhance' in argv or 'enhance' in argv or 'quality' in argv:
     image = photoAI.photo.Enhance_image(image)
 
-if '--old' in argv:
+if '--old' in argv or 'old' in argv:
 	image = photoAI.filters.Old_filter(image)
 
-if '--dark' in argv:
+if '--dark' in argv or 'dark' in argv:
 	image = photoAI.filters.Dark_filter(image)
 
-if '--blurred' in argv:
+if '--blurred' in argv or 'blurr' in argv:
 	image = photoAI.filters.Blurred_filter(image)
 
-if '--Modern_quality' in argv:
+if '--modern_quality' in argv or 'modern' in argv:
 	image = photoAI.filters.Modern_quality(image)
 
-if '--Reconstruct_image' in argv:
+if '--reconstruct_image' in argv or 'reconstruct' in argv:
 	image = photoAI.photo.Reconstruct_image(image)
 
-if '--Remove_noise' in argv:
+if '--remove_noise' in argv or 'noise' in argv:
 	image = photoAI.photo.Remove_noise(image)
 
-if '--Adjust_grain' in argv:
+if '--adjust_grain' in argv or 'grain' in argv:
 	image = photoAI.photo.Adjust_grain(image)
 
-if '--show' in argv:
+if '--show' in argv or 'show' in argv:
     photoAI.show_photo('photo',image)
 photoAI.save_photo(output_photo,image)
